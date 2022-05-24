@@ -11,6 +11,17 @@ sudo apt install gcc-arm-linux-gnueabi
 ```
 
 ## Assembling and Executing the Code
+First assemble the source code into object code
+```
 arm-linux-gnueabi-as Hello.asm -o Hello.o
+```
+
+Then convert the object code to an elf
+```
 arm-linux-gnueabi-gcc Hello.o -o Hello.elf -nostdlib
+```
+
+Run the program using Qemu
+```
 qemu-arm ./Hello.elf
+```
